@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = Doxr::VERSION
   spec.authors       = ["Dakuan"]
   spec.email         = ["dom.barker808@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
-  spec.homepage      = ""
+  spec.description   = %q{Imports .docx files}
+  spec.summary       = %q{Import .docx files like a boss}
+  spec.homepage      = "https://github.com/Dakuan/doxr"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
@@ -20,4 +20,6 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "rake"
+  spec.add_dependency "nokogiri"
+  spec.add_dependency "erubis"
 end
