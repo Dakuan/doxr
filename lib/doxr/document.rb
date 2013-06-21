@@ -23,7 +23,6 @@ class Doxr::Document
 
   def extract_styles
     doc = get_doc 'styles'
-    puts doc.xpath("//latentStyles").children
   end
 
   def extract_content
