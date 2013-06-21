@@ -1,6 +1,5 @@
-require 'zip/zipfilesystem'
-
 class Doxr::Document
+
   attr_reader :elements
 
   def initialize(file_path)
@@ -9,12 +8,6 @@ class Doxr::Document
     extract_styles
     extract_content
     FileUtils.rm_rf('.temp/')
-  end
-
-  def to_html
-    input = File.read('page.eruby')
-    eruby = Erubis::Eruby.new(input)
-    eruby.result(list: @elements)
   end
 
   private
@@ -35,7 +28,7 @@ class Doxr::Document
   def extract_content
     doc = get_doc 'document'
     doc.xpath("//p").each do |e|
-      @elements << Element.new(e)
+      @elements << Doxr::Element.new(e)
     end
   end
 
